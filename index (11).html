@@ -1,0 +1,1571 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#2563eb" />
+  <title>Автоматизация бизнеса в Крыму | AI-чатботы для гостиниц, баней, салонов</title>
+  <meta name="description" content="Автоматизация для малого бизнеса в Крыму: умные помощники, онлайн-запись и ответы клиентам для гостиниц, бань и салонов. От 7000₽. Бесплатная консультация." />
+  <meta name="keywords" content="автоматизация бизнеса Крым, чатбот для гостиницы Севастополь, онлайн запись баня, умный помощник малый бизнес" />
+
+  <meta property="og:title" content="Автоматизация бизнеса в Крыму - Ваш бизнес работает 24/7" />
+  <meta property="og:description" content="Увеличьте прибыль с автоматизацией: гостиницы, бани, салоны, кафе и магазины." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ru_RU" />
+
+  <meta name="geo.region" content="RU-CR" />
+  <meta name="geo.placename" content="Крым, Севастополь" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Автоматизация бизнеса в Крыму",
+    "description": "Умные помощники, онлайн-запись и автоматические напоминания для малого бизнеса в Крыму",
+    "areaServed": "Крым",
+    "priceRange": "7000-50000 RUB"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root{
+      --blue:#2563eb;
+      --blue-700:#1d4ed8;
+      --green:#10b981;
+      --green-700:#059669;
+      --bg:#f8fafc;
+      --card:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --line:#e2e8f0;
+      --danger:#ef4444;
+      --shadow:0 24px 60px rgba(15,23,42,.09);
+      --shadow-soft:0 12px 30px rgba(37,99,235,.12);
+      --radius:24px;
+      --radius-sm:18px;
+      --container:1180px;
+      --header-h:78px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(37,99,235,.10), transparent 30%),
+        radial-gradient(circle at top right, rgba(16,185,129,.10), transparent 28%),
+        linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+      line-height:1.5;
+      overflow-x:hidden;
+    }
+    img,svg{display:block;max-width:100%}
+    a{color:inherit;text-decoration:none}
+    button,input,select,textarea{font:inherit}
+    .container{width:min(calc(100% - 32px), var(--container)); margin:0 auto}
+    .section{padding:72px 0; position:relative}
+    .section.alt{
+      background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(248,250,252,.98));
+      border-top:1px solid rgba(226,232,240,.7);
+      border-bottom:1px solid rgba(226,232,240,.7);
+    }
+    .section-head{
+      max-width:820px;
+      margin:0 auto 32px;
+      text-align:center;
+    }
+    h1,h2,h3,p{margin:0}
+    h1{
+      font-size:clamp(2.3rem, 5vw, 4.8rem);
+      line-height:1.02;
+      letter-spacing:-0.05em;
+    }
+    h2{
+      font-size:clamp(1.8rem, 3.2vw, 3rem);
+      line-height:1.08;
+      letter-spacing:-0.04em;
+      margin-bottom:12px;
+    }
+    h3{
+      font-size:1.08rem;
+      line-height:1.25;
+      font-weight:800;
+      letter-spacing:-0.02em;
+    }
+    p{color:var(--muted)}
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:8px 14px;
+      border-radius:999px;
+      background:rgba(37,99,235,.08);
+      color:var(--blue-700);
+      font-weight:700;
+      font-size:.92rem;
+      margin-bottom:18px;
+    }
+    .eyebrow .dot{
+      width:10px;height:10px;border-radius:999px;background:linear-gradient(135deg,var(--blue),var(--green));
+      box-shadow:0 0 0 6px rgba(37,99,235,.08);
+    }
+
+    .header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      backdrop-filter:saturate(180%) blur(16px);
+      background:rgba(255,255,255,.82);
+      border-bottom:1px solid rgba(226,232,240,.8);
+    }
+    .header-inner{
+      min-height:var(--header-h);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
+    .brand{
+      display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:-0.03em;
+    }
+    .brand-mark{
+      width:42px;height:42px;border-radius:14px;
+      background:linear-gradient(135deg,var(--blue),var(--green));
+      box-shadow:var(--shadow-soft);
+      display:grid;place-items:center;
+      color:#fff;font-size:1.1rem;
+    }
+    .nav{
+      display:flex;align-items:center;gap:22px;color:var(--muted);font-weight:600
+    }
+    .nav a{transition:.2s color}
+    .nav a:hover{color:var(--text)}
+    .header-cta{
+      display:flex;align-items:center;gap:12px;
+    }
+    .phone-link{
+      font-weight:800;
+      white-space:nowrap;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      border:0;
+      border-radius:16px;
+      padding:14px 20px;
+      font-weight:800;
+      cursor:pointer;
+      transition:transform .2s ease, box-shadow .2s ease, background .2s ease, opacity .2s ease;
+      box-shadow:0 10px 24px rgba(37,99,235,.18);
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{
+      background:linear-gradient(135deg, var(--green), #22c55e);
+      color:#fff;
+    }
+    .btn-secondary{
+      background:#eff6ff;
+      color:var(--blue-700);
+      box-shadow:none;
+      border:1px solid rgba(37,99,235,.15);
+    }
+    .btn-dark{
+      background:linear-gradient(135deg, var(--blue), var(--blue-700));
+      color:#fff;
+    }
+    .burger{
+      display:none;
+      width:46px;height:46px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:#fff;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+    }
+
+    .hero{
+      padding:42px 0 54px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.12fr .88fr;
+      gap:28px;
+      align-items:center;
+    }
+    .hero-copy{
+      padding:8px 0;
+    }
+    .hero-subtitle{
+      font-size:clamp(1.08rem, 2.1vw, 1.38rem);
+      margin:18px 0 18px;
+      max-width:640px;
+      color:#0f172a;
+      font-weight:600;
+    }
+    .hero-bullets{
+      display:grid;
+      gap:12px;
+      margin:24px 0 26px;
+      padding:0;
+      list-style:none;
+      max-width:600px;
+    }
+    .hero-bullets li{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      font-weight:600;
+      color:#0f172a;
+      background:rgba(255,255,255,.78);
+      border:1px solid rgba(226,232,240,.9);
+      border-radius:18px;
+      padding:14px 16px;
+      box-shadow:0 8px 24px rgba(15,23,42,.04);
+    }
+    .check{
+      color:var(--green);
+      font-weight:900;
+      line-height:1.1;
+      flex:0 0 auto;
+      width:22px;height:22px;border-radius:999px;
+      background:rgba(16,185,129,.12);
+      display:grid;place-items:center;
+      margin-top:1px;
+    }
+    .hero-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      align-items:center;
+      margin-top:12px;
+    }
+    .price-pill{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      background:#fff;
+      padding:14px 18px;
+      border-radius:18px;
+      border:1px solid rgba(226,232,240,.95);
+      box-shadow:0 10px 26px rgba(15,23,42,.06);
+      font-weight:800;
+    }
+    .price-pill strong{color:var(--blue-700)}
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:22px}
+    .hero-visual{
+      position:relative;
+      min-height:620px;
+      border-radius:32px;
+      overflow:hidden;
+      background:
+        radial-gradient(circle at 20% 25%, rgba(255,255,255,.42), transparent 22%),
+        radial-gradient(circle at 80% 15%, rgba(255,255,255,.25), transparent 18%),
+        linear-gradient(160deg, #1d4ed8 0%, #2563eb 40%, #10b981 120%);
+      box-shadow:var(--shadow);
+      padding:26px;
+      isolation:isolate;
+    }
+    .hero-visual::after{
+      content:"";
+      position:absolute;inset:-20%;
+      background:radial-gradient(circle at center, rgba(255,255,255,.15), transparent 45%);
+      z-index:-1;
+      transform:rotate(18deg);
+    }
+    .mock-card{
+      position:absolute;
+      background:rgba(255,255,255,.92);
+      border:1px solid rgba(255,255,255,.45);
+      box-shadow:0 20px 50px rgba(0,0,0,.13);
+      border-radius:22px;
+      backdrop-filter:blur(8px);
+    }
+    .mock-main{
+      left:26px; top:34px; right:26px; bottom:24px;
+      padding:18px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      gap:18px;
+    }
+    .mock-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:14px;
+      font-weight:800;
+      color:#0f172a;
+    }
+    .status{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      background:rgba(16,185,129,.12);
+      color:var(--green-700);
+      font-size:.92rem;
+    }
+    .conversation{
+      display:grid;
+      gap:12px;
+      flex:1;
+    }
+    .bubble{
+      max-width:78%;
+      padding:14px 16px;
+      border-radius:18px;
+      font-size:.95rem;
+      box-shadow:0 6px 18px rgba(15,23,42,.08);
+    }
+    .bubble.in{
+      background:#eef6ff;
+      color:#0f172a;
+      border-top-left-radius:8px;
+    }
+    .bubble.out{
+      margin-left:auto;
+      background:linear-gradient(135deg,#10b981,#22c55e);
+      color:#fff;
+      border-top-right-radius:8px;
+    }
+    .mock-bottom{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+    }
+    .mini{
+      border-radius:18px;
+      padding:14px 12px;
+      background:linear-gradient(180deg,#f8fbff,#edf7ff);
+      text-align:center;
+      color:#0f172a;
+      border:1px solid rgba(255,255,255,.75);
+      font-weight:800;
+    }
+    .mini i{display:block;font-size:1.3rem;margin-bottom:8px;color:var(--blue)}
+    .floating{
+      position:absolute;
+      right:20px;
+      top:20px;
+      display:grid;
+      gap:10px;
+    }
+    .float-badge{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      background:rgba(255,255,255,.92);
+      border:1px solid rgba(255,255,255,.6);
+      border-radius:16px;
+      padding:10px 12px;
+      font-weight:800;
+      color:#0f172a;
+      box-shadow:0 16px 30px rgba(0,0,0,.12);
+    }
+    .float-badge span{
+      width:30px;height:30px;border-radius:12px;
+      display:grid;place-items:center;
+      background:linear-gradient(135deg, rgba(37,99,235,.12), rgba(16,185,129,.12));
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:18px;
+    }
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+    .grid-6{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+    }
+    .card{
+      background:rgba(255,255,255,.96);
+      border:1px solid rgba(226,232,240,.9);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow-soft);
+      padding:22px;
+      position:relative;
+      overflow:hidden;
+    }
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:auto -30px -40px auto;
+      width:140px;height:140px;border-radius:50%;
+      background:radial-gradient(circle, rgba(37,99,235,.09), transparent 70%);
+      pointer-events:none;
+    }
+    .problem{
+      min-height:194px;
+    }
+    .problem .icon{
+      width:48px;height:48px;border-radius:16px;
+      display:grid;place-items:center;
+      background:rgba(239,68,68,.10);
+      color:var(--danger);
+      font-size:1.1rem;
+      margin-bottom:16px;
+    }
+    .problem p{margin-top:10px}
+    .highlight{
+      margin-top:18px;
+      text-align:center;
+      font-size:clamp(1.1rem, 2vw, 1.55rem);
+      font-weight:900;
+      color:#0f172a;
+      background:linear-gradient(135deg, rgba(37,99,235,.08), rgba(16,185,129,.10));
+      border:1px solid rgba(37,99,235,.14);
+      border-radius:22px;
+      padding:18px;
+    }
+
+    .calc-wrap{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    .calc-panel{
+      padding:26px;
+    }
+    .range-group{
+      display:grid;
+      gap:12px;
+      margin-top:22px;
+    }
+    .range-head{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      align-items:flex-end;
+      font-weight:700;
+    }
+    input[type="range"]{
+      width:100%;
+      accent-color:var(--blue);
+      height:4px;
+    }
+    .calc-input{
+      display:grid;
+      gap:8px;
+      margin-top:18px;
+    }
+    .calc-input input,
+    .form-field input,
+    .form-field select,
+    .form-field textarea{
+      width:100%;
+      border:1px solid #dbe3ef;
+      background:#fff;
+      color:var(--text);
+      padding:14px 16px;
+      border-radius:16px;
+      outline:none;
+      transition:border-color .2s ease, box-shadow .2s ease;
+    }
+    .calc-input input:focus,
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus{
+      border-color:rgba(37,99,235,.45);
+      box-shadow:0 0 0 4px rgba(37,99,235,.10);
+    }
+    .calc-results{
+      display:grid;
+      gap:14px;
+      padding:26px;
+      background:
+        linear-gradient(135deg, rgba(37,99,235,.10), rgba(16,185,129,.10)),
+        #fff;
+    }
+    .stat{
+      border-radius:22px;
+      background:#fff;
+      border:1px solid rgba(226,232,240,.9);
+      padding:20px;
+      box-shadow:0 10px 26px rgba(15,23,42,.05);
+    }
+    .stat strong{
+      display:block;
+      font-size:clamp(1.6rem, 3vw, 2.3rem);
+      line-height:1.1;
+      letter-spacing:-0.05em;
+      margin-top:8px;
+    }
+    .stat .muted{color:var(--muted); font-weight:600}
+    .stat.red strong{color:var(--danger)}
+    .stat.green strong{color:var(--green-700)}
+    .formula{
+      font-size:.95rem;
+      color:#64748b;
+      padding-top:2px;
+    }
+
+    .services-card{
+      min-height:210px;
+    }
+    .services-card .topline{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      margin-bottom:14px;
+    }
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:rgba(16,185,129,.10);
+      color:var(--green-700);
+      border-radius:999px;
+      padding:7px 11px;
+      font-size:.88rem;
+      font-weight:800;
+    }
+    .service-result{
+      margin-top:14px;
+      font-weight:800;
+      color:var(--blue-700);
+    }
+
+    .audience-strip{
+      display:flex;
+      gap:12px;
+      overflow:auto;
+      padding-bottom:6px;
+      scroll-snap-type:x proximity;
+    }
+    .audience-strip::-webkit-scrollbar{height:8px}
+    .audience-strip::-webkit-scrollbar-thumb{background:#d7e3f3;border-radius:999px}
+    .audience-chip{
+      flex:0 0 auto;
+      min-width:180px;
+      scroll-snap-align:start;
+      padding:16px 18px;
+      border-radius:18px;
+      background:#fff;
+      border:1px solid rgba(226,232,240,.95);
+      box-shadow:0 10px 24px rgba(15,23,42,.05);
+      font-weight:700;
+    }
+    .audience-chip i{
+      display:block;
+      font-size:1.2rem;
+      margin-bottom:10px;
+      color:var(--blue);
+    }
+    .audience-note{
+      text-align:center;
+      margin-top:16px;
+      font-weight:700;
+      color:#0f172a;
+      background:rgba(255,255,255,.9);
+      border:1px solid rgba(226,232,240,.9);
+      border-radius:18px;
+      padding:14px 18px;
+    }
+
+    .pricing{
+      align-items:stretch;
+    }
+    .price-card{
+      padding:0;
+      overflow:hidden;
+    }
+    .price-card .inner{
+      padding:24px;
+    }
+    .price-top{
+      padding:24px 24px 18px;
+      border-bottom:1px solid rgba(226,232,240,.9);
+      background:linear-gradient(180deg, rgba(248,250,252,.9), #fff);
+    }
+    .price-name{
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      align-items:flex-start;
+      font-weight:900;
+      letter-spacing:-0.03em;
+    }
+    .price-name .badge{
+      background:linear-gradient(135deg, var(--blue), var(--green));
+      color:#fff;
+      padding:7px 10px;
+      border-radius:999px;
+      font-size:.8rem;
+      font-weight:900;
+    }
+    .price{
+      margin-top:10px;
+      font-size:clamp(1.8rem, 3vw, 2.5rem);
+      line-height:1;
+      font-weight:900;
+      letter-spacing:-0.05em;
+    }
+    .price-list{
+      list-style:none;
+      padding:0;margin:0 0 20px;
+      display:grid; gap:11px;
+      color:#0f172a;
+      font-weight:600;
+    }
+    .price-list li{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+    }
+    .price-list .check{margin-top:2px}
+
+    .timeline{
+      position:relative;
+      display:grid;
+      gap:18px;
+      padding-left:16px;
+    }
+    .timeline::before{
+      content:"";
+      position:absolute;
+      left:24px;
+      top:6px;
+      bottom:6px;
+      width:2px;
+      background:linear-gradient(180deg, var(--blue), var(--green));
+      border-radius:999px;
+    }
+    .step{
+      position:relative;
+      margin-left:20px;
+      padding:20px 22px 20px 24px;
+    }
+    .step::before{
+      content:"";
+      position:absolute;
+      left:-32px;
+      top:26px;
+      width:18px;height:18px;border-radius:50%;
+      background:#fff;
+      border:4px solid var(--blue);
+      box-shadow:0 0 0 8px rgba(37,99,235,.10);
+    }
+    .step h3{margin-bottom:8px}
+    .step p{max-width:650px}
+
+    .why{
+      align-items:stretch;
+    }
+    .why .card{min-height:100%}
+    .why .icon{
+      width:52px;height:52px;border-radius:18px;
+      display:grid;place-items:center;
+      background:linear-gradient(135deg, rgba(37,99,235,.12), rgba(16,185,129,.12));
+      color:var(--blue-700);
+      font-size:1.2rem;
+      margin-bottom:16px;
+    }
+
+    .form-section{
+      padding-top:24px;
+    }
+    .form-shell{
+      max-width:680px;
+      margin:0 auto;
+      background:linear-gradient(180deg, rgba(255,255,255,.98), rgba(248,250,252,.96));
+      border:1px solid rgba(226,232,240,.95);
+      border-radius:32px;
+      box-shadow:var(--shadow);
+      padding:26px;
+    }
+    form{
+      display:grid;
+      gap:16px;
+    }
+    .form-grid{
+      display:grid;
+      gap:16px;
+      grid-template-columns:1fr 1fr;
+    }
+    .form-field{
+      display:grid;
+      gap:8px;
+    }
+    .form-field.full{grid-column:1/-1}
+    label{
+      font-size:.95rem;
+      font-weight:700;
+      color:#0f172a;
+    }
+    .helper{
+      font-size:.88rem;
+      color:#64748b;
+    }
+    textarea{
+      min-height:110px;
+      resize:vertical;
+    }
+    .consent{
+      display:flex;
+      align-items:flex-start;
+      gap:12px;
+      color:#0f172a;
+      font-weight:600;
+    }
+    .consent input{margin-top:4px; width:18px; height:18px}
+    .submit-row{
+      display:flex;
+      gap:14px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .submit-row .btn{
+      min-width:220px;
+      min-height:54px;
+      border-radius:18px;
+      font-size:1rem;
+    }
+    .form-note{
+      font-size:.92rem;
+      color:#64748b;
+    }
+    .honeypot{
+      position:absolute;
+      left:-5000px;
+      width:1px;
+      height:1px;
+      overflow:hidden;
+    }
+
+    .footer{
+      padding:42px 0 28px;
+      background:#0f172a;
+      color:#e2e8f0;
+      margin-top:36px;
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.1fr 1fr .9fr;
+      gap:20px;
+    }
+    .footer h3{
+      margin-bottom:12px;
+      color:#fff;
+      font-size:1.05rem;
+    }
+    .footer a{color:#fff;opacity:.9}
+    .footer a:hover{opacity:1}
+    .footer-list{
+      display:grid;
+      gap:10px;
+      padding:0;
+      margin:0;
+      list-style:none;
+      color:#cbd5e1;
+      font-weight:600;
+    }
+    .footer small{color:#94a3b8}
+    .footer-top{
+      padding-bottom:24px;
+      border-bottom:1px solid rgba(148,163,184,.16);
+      margin-bottom:22px;
+    }
+    .footer-actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:12px}
+
+    .modal{
+      position:fixed;
+      inset:0;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      background:rgba(15,23,42,.55);
+      z-index:2000;
+      padding:20px;
+    }
+    .modal.open{display:flex}
+    .modal-card{
+      width:min(100%, 460px);
+      background:#fff;
+      border-radius:28px;
+      padding:28px;
+      text-align:center;
+      box-shadow:var(--shadow);
+    }
+    .modal-icon{
+      width:64px;height:64px;
+      margin:0 auto 16px;
+      border-radius:22px;
+      display:grid;place-items:center;
+      color:#fff;
+      background:linear-gradient(135deg,var(--green),#22c55e);
+      font-size:1.7rem;
+    }
+    .close-x{
+      margin-top:18px;
+      background:#eff6ff;
+      color:var(--blue-700);
+      box-shadow:none;
+    }
+
+    .reveal{
+      opacity:0;
+      transform:translateY(18px);
+      transition:opacity .75s ease, transform .75s ease;
+    }
+    .reveal.visible{
+      opacity:1;
+      transform:none;
+    }
+
+    .skip{
+      position:absolute;
+      left:-9999px;
+      top:auto;
+      width:1px;height:1px;
+      overflow:hidden;
+    }
+    .skip:focus{
+      left:16px; top:12px; width:auto; height:auto;
+      padding:10px 14px;
+      background:#fff;
+      border-radius:12px;
+      z-index:3000;
+    }
+
+    @media (max-width: 1080px){
+      .hero-grid,
+      .calc-wrap,
+      .footer-grid,
+      .grid-3{
+        grid-template-columns:1fr;
+      }
+      .grid-6{grid-template-columns:repeat(2,1fr)}
+      .hero-visual{min-height:520px}
+      .nav{display:none}
+      .burger{display:inline-flex}
+      .header-cta .phone-link{display:none}
+    }
+    @media (max-width: 760px){
+      :root{--header-h:72px}
+      .section{padding:56px 0}
+      .hero{padding-top:22px}
+      .grid-2,.grid-6{grid-template-columns:1fr}
+      .form-grid{grid-template-columns:1fr}
+      .form-field.full{grid-column:auto}
+      .hero-actions,.submit-row,.footer-actions{flex-direction:column; align-items:stretch}
+      .btn,.submit-row .btn{width:100%}
+      .hero-visual{min-height:440px; padding:18px}
+      .mock-main{left:18px; right:18px; top:18px; bottom:18px}
+      .bubble{max-width:90%}
+      .floating{right:12px; top:12px}
+      .step{margin-left:10px}
+    }
+
+    .mobile-nav{
+      display:none;
+      border-top:1px solid rgba(226,232,240,.8);
+      background:rgba(255,255,255,.95);
+      box-shadow:0 20px 40px rgba(15,23,42,.08);
+    }
+    .mobile-nav.open{display:block}
+    .mobile-nav .container{
+      padding:14px 0 18px;
+      display:grid;
+      gap:10px;
+    }
+    .mobile-nav a{
+      padding:12px 14px;
+      border-radius:14px;
+      background:#f8fafc;
+      font-weight:700;
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#content">Перейти к содержанию</a>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#hero" class="brand" aria-label="AIFEO: Автопилот для вашего бизнеса">
+        <span class="brand-mark"><i class="fa-solid fa-bolt"></i></span>
+        <span>AIFEO: Автопилот для вашего бизнеса</span>
+      </a>
+
+      <nav class="nav" aria-label="Основная навигация">
+        <a href="#problems">Проблемы</a>
+        <a href="#calculator">Калькулятор</a>
+        <a href="#services">Что делаем</a>
+        <a href="#pricing">Тарифы</a>
+        <a href="#contact">Заявка</a>
+      </nav>
+
+      <div class="header-cta">
+        <a class="btn btn-primary" href="#contact"><i class="fa-solid fa-paper-plane"></i> Оставить заявку</a>
+        <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <div class="container">
+        <a href="#problems">Проблемы</a>
+        <a href="#calculator">Калькулятор</a>
+        <a href="#services">Что делаем</a>
+        <a href="#pricing">Тарифы</a>
+        <a href="#contact">Заявка</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="content">
+    <section class="hero section" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <div class="eyebrow"><span class="dot"></span> Для гостиниц, бань, салонов и малого бизнеса в Крыму</div>
+          <h1>Теряете клиентов, потому что не отвечаете ночью?</h1>
+          <p class="hero-subtitle">Автоматизация для гостиниц, баней и салонов в Крыму — ваш бизнес работает 24/7, даже когда вы спите</p>
+
+          <ul class="hero-bullets">
+            <li><span class="check">✓</span><span>Клиенты получают ответы круглосуточно — без ожидания и потери заявки</span></li>
+            <li><span class="check">✓</span><span>Онлайн-запись работает без вашего участия</span></li>
+            <li><span class="check">✓</span><span>Напоминания уходят автоматически — гости не забывают о визите</span></li>
+          </ul>
+
+          <div class="hero-meta">
+            <div class="price-pill"><i class="fa-solid fa-tag" style="color:var(--blue-700)"></i> <strong>От 7 000₽</strong> <span>| Первая консультация бесплатно</span></div>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact"><i class="fa-solid fa-calculator"></i> Получить бесплатный расчет</a>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal" aria-label="Визуал с чатами и автоматизацией">
+          <div class="floating">
+            <div class="float-badge"><span>💬</span> Ответы клиентам</div>
+            <div class="float-badge"><span>🤖</span> Умный помощник</div>
+            <div class="float-badge"><span>📅</span> Онлайн-запись</div>
+          </div>
+
+          <div class="mock-card mock-main">
+            <div class="mock-top">
+              <div>Счастливый владелец бизнеса</div>
+              <div class="status"><i class="fa-solid fa-circle-check"></i> Всегда на связи</div>
+            </div>
+
+            <div class="conversation">
+              <div class="bubble in">Здравствуйте! Есть ли свободная баня на вечер?</div>
+              <div class="bubble out">Да, есть окна на 19:00 и 21:00. Могу сразу записать вас.</div>
+              <div class="bubble in">Отлично, забронируйте на 21:00.</div>
+              <div class="bubble out">Готово. Напоминание придет за день и за час до визита.</div>
+            </div>
+
+            <div class="mock-bottom">
+              <div class="mini"><i class="fa-solid fa-comments"></i> Быстрые ответы</div>
+              <div class="mini"><i class="fa-solid fa-calendar-check"></i> Запись без звонков</div>
+              <div class="mini"><i class="fa-solid fa-bell"></i> Напоминания</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="problems">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow"><span class="dot"></span> Знакомые проблемы?</div>
+          <h2>Узнаете себя?</h2>
+          <p>Вот что чаще всего мешает бизнесу не терять заявки и спокойно расти.</p>
+        </div>
+
+        <div class="grid-2 grid-6">
+          <article class="card problem reveal">
+            <div class="icon"><i class="fa-solid fa-xmark"></i></div>
+            <h3>Упускаете заявки ночью</h3>
+            <p>Клиент пишет в 23:00, а вы отвечаете утром — он уже ушел к конкурентам.</p>
+          </article>
+          <article class="card problem reveal">
+            <div class="icon"><i class="fa-solid fa-xmark"></i></div>
+            <h3>3–4 часа на переписки</h3>
+            <p>Каждый день одни и те же вопросы в WhatsApp: «А сколько стоит?», «А есть места?»</p>
+          </article>
+          <article class="card problem reveal">
+            <div class="icon"><i class="fa-solid fa-xmark"></i></div>
+            <h3>Клиенты забывают о записи</h3>
+            <p>Записались на баню, не пришли — вы потеряли 3000₽ и время.</p>
+          </article>
+          <article class="card problem reveal">
+            <div class="icon"><i class="fa-solid fa-xmark"></i></div>
+            <h3>Записи в блокноте</h3>
+            <p>Excel, тетрадка, стикеры — легко забыть или перепутать.</p>
+          </article>
+          <article class="card problem reveal">
+            <div class="icon"><i class="fa-solid fa-xmark"></i></div>
+            <h3>Хаос в высокий сезон</h3>
+            <p>Летом заявки сыплются, вы не успеваете — люди уходят.</p>
+          </article>
+          <article class="card problem reveal">
+            <div class="icon"><i class="fa-solid fa-xmark"></i></div>
+            <h3>Работаете 24/7 сами</h3>
+            <p>Нет выходных, телефон не выпускаете из рук.</p>
+          </article>
+        </div>
+
+        <div class="highlight reveal">Каждая проблема = потеря 30 000 – 50 000₽ в месяц</div>
+      </div>
+    </section>
+
+    <section class="section" id="calculator">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow"><span class="dot"></span> Калькулятор экономии</div>
+          <h2>Посчитайте, сколько теряете прямо сейчас</h2>
+          <p>Оценка показывает, сколько денег и времени съедает рутина каждый месяц.</p>
+        </div>
+
+        <div class="calc-wrap">
+          <div class="card calc-panel reveal">
+            <div class="range-group">
+              <div class="range-head">
+                <label for="hours">Часов в день на рутину (переписки, записи)</label>
+                <span id="hoursLabel">Сейчас: 4 часа</span>
+              </div>
+              <input id="hours" type="range" min="0" max="8" step="1" value="4" />
+            </div>
+
+            <div class="range-group">
+              <div class="range-head">
+                <label for="leads">Упущенных заявок в неделю</label>
+                <span id="leadsLabel">Сейчас: 10 заявок</span>
+              </div>
+              <input id="leads" type="range" min="0" max="50" step="1" value="10" />
+            </div>
+
+            <div class="calc-input">
+              <label for="check">Средний чек вашей услуги (₽)</label>
+              <input id="check" type="number" min="0" step="100" placeholder="3000" value="3000" />
+            </div>
+
+            <p class="formula">Потери = (упущенные заявки × 4 недели × средний чек) + (часы рутины × 30 дней × 500₽/час)</p>
+          </div>
+
+          <div class="card calc-results reveal">
+            <div class="stat red">
+              <span class="muted">Вы теряете</span>
+              <strong id="losses">120 000₽</strong>
+            </div>
+            <div class="stat green">
+              <span class="muted">Автоматизация окупится за</span>
+              <strong id="payback">2 месяца</strong>
+            </div>
+            <div class="stat">
+              <span class="muted">Что дает эффект</span>
+              <strong id="savings">Больше свободного времени</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow"><span class="dot"></span> Что мы делаем</div>
+          <h2>Что автоматизируем для вашего бизнеса</h2>
+          <p>Настраиваем решения так, чтобы вы меньше отвлекались на рутину и больше занимались продажами.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card services-card reveal">
+            <div class="topline">
+              <h3>💬 Ответы клиентам 24/7</h3>
+              <span class="tag">+40% заявок</span>
+            </div>
+            <p>Умный помощник отвечает в WhatsApp, Telegram и Instagram на типовые вопросы. Работает даже ночью.</p>
+            <div class="service-result">Результат: клиенты получают ответ мгновенно.</div>
+          </article>
+          <article class="card services-card reveal">
+            <div class="topline">
+              <h3>📅 Онлайн-запись</h3>
+              <span class="tag">-60% забытых визитов</span>
+            </div>
+            <p>Клиенты сами выбирают время через бот или сайт. Вы получаете уведомление, а система напоминает за день и за час.</p>
+            <div class="service-result">Результат: меньше пустых окон в расписании.</div>
+          </article>
+          <article class="card services-card reveal">
+            <div class="topline">
+              <h3>📧 Автоматические рассылки</h3>
+              <span class="tag">+25% повторных</span>
+            </div>
+            <p>Приветственные письма, напоминания, сбор отзывов и акции уходят автоматически без ручной работы.</p>
+            <div class="service-result">Результат: больше возвратных клиентов.</div>
+          </article>
+          <article class="card services-card reveal">
+            <div class="topline">
+              <h3>🌐 Создание сайта</h3>
+              <span class="tag">Работает 24/7</span>
+            </div>
+            <p>Лендинг или сайт с онлайн-записью, который приводит заявки и продает без вашего постоянного участия.</p>
+            <div class="service-result">Результат: клиенты находят вас сами.</div>
+          </article>
+          <article class="card services-card reveal">
+            <div class="topline">
+              <h3>🔗 Все в одном месте</h3>
+              <span class="tag">Меньше хаоса</span>
+            </div>
+            <p>Связываем Telegram, сайт, таблицы и календарь, чтобы вы управляли всем из одного окна.</p>
+            <div class="service-result">Результат: не нужно прыгать между 5 вкладками.</div>
+          </article>
+          <article class="card services-card reveal">
+            <div class="topline">
+              <h3>🤝 Личный подход</h3>
+              <span class="tag">Под ваш бизнес</span>
+            </div>
+            <p>Разбираемся в вашем бизнесе, настраиваем под ваши процессы и убираем только то, что реально мешает.</p>
+            <div class="service-result">Результат: решение под вашу задачу, а не шаблон.</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="audience">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow"><span class="dot"></span> Для кого</div>
+          <h2>Кому подходит автоматизация</h2>
+          <p>Работаем только с бизнесом в Крыму — знаем местную специфику, сезонность и поведение клиентов.</p>
+        </div>
+
+        <div class="audience-strip reveal" aria-label="Сферы бизнеса">
+          <div class="audience-chip"><i class="fa-solid fa-hotel"></i>Гостиницы и хостелы</div>
+          <div class="audience-chip"><i class="fa-solid fa-house"></i>Гостевые дома</div>
+          <div class="audience-chip"><i class="fa-solid fa-spa"></i>Бани и СПА</div>
+          <div class="audience-chip"><i class="fa-solid fa-scissors"></i>Парикмахерские</div>
+          <div class="audience-chip"><i class="fa-solid fa-spa"></i>Салоны красоты</div>
+          <div class="audience-chip"><i class="fa-solid fa-mug-saucer"></i>Кафе и рестораны</div>
+          <div class="audience-chip"><i class="fa-solid fa-store"></i>Магазины</div>
+          <div class="audience-chip"><i class="fa-solid fa-briefcase"></i>Любой малый бизнес</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="pricing">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow"><span class="dot"></span> Тарифы</div>
+          <h2>Сколько стоит автоматизация</h2>
+          <p>Можно начать с простого решения и расширить его по мере роста задач.</p>
+        </div>
+
+        <div class="grid-3 pricing">
+          <article class="card price-card reveal">
+            <div class="price-top">
+              <div class="price-name"><span>💼 СТАРТ</span></div>
+              <div class="price">17 000₽</div>
+            </div>
+            <div class="inner">
+              <ul class="price-list">
+                <li><span class="check">✓</span><span>Умный помощник (1 канал)</span></li>
+                <li><span class="check">✓</span><span>Автоответы</span></li>
+                <li><span class="check">✓</span><span>WhatsApp / Telegram</span></li>
+                <li><span class="check">✓</span><span>Инструкция</span></li>
+              </ul>
+              <a class="btn btn-secondary" href="#contact" style="width:100%">Выбрать тариф</a>
+            </div>
+          </article>
+
+          <article class="card price-card reveal" style="border:1px solid rgba(16,185,129,.35); box-shadow:0 24px 60px rgba(16,185,129,.16); transform:translateY(-6px)">
+            <div class="price-top">
+              <div class="price-name">
+                <span>🚀 БИЗНЕС</span>
+                <span class="badge">ХИТ</span>
+              </div>
+              <div class="price">30 000₽</div>
+            </div>
+            <div class="inner">
+              <ul class="price-list">
+                <li><span class="check">✓</span><span>Все из тарифа «Старт»</span></li>
+                <li><span class="check">✓</span><span>Онлайн-запись</span></li>
+                <li><span class="check">✓</span><span>Напоминания клиентам</span></li>
+                <li><span class="check">✓</span><span>2 канала</span></li>
+                <li><span class="check">✓</span><span>Простой лендинг</span></li>
+              </ul>
+              <a class="btn btn-primary" href="#contact" style="width:100%">Выбрать тариф</a>
+            </div>
+          </article>
+
+          <article class="card price-card reveal">
+            <div class="price-top">
+              <div class="price-name"><span>⚡ ИНДИВИДУАЛЬНЫЙ</span></div>
+              <div class="price">от 50 000₽</div>
+            </div>
+            <div class="inner">
+              <ul class="price-list">
+                <li><span class="check">✓</span><span>Полная автоматизация</span></li>
+                <li><span class="check">✓</span><span>Сайт под ключ</span></li>
+                <li><span class="check">✓</span><span>Email / SMS рассылки</span></li>
+              </ul>
+              <a class="btn btn-secondary" href="#contact" style="width:100%">Обсудить проект</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="highlight reveal" style="margin-top:18px">Рассрочка и оплата по этапам</div>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow"><span class="dot"></span> Как работаем</div>
+          <h2>Как проходит внедрение</h2>
+          <p>Пошагово, спокойно и без лишней бюрократии.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="card step reveal">
+            <h3>1️⃣ Бесплатная консультация</h3>
+            <p>Созваниваемся на 30 минут, разбираем ваш бизнес и находим узкие места.</p>
+          </div>
+          <div class="card step reveal">
+            <h3>2️⃣ Анализ и предложение</h3>
+            <p>Показываем, что можно автоматизировать, и считаем окупаемость.</p>
+          </div>
+          <div class="card step reveal">
+            <h3>3️⃣ Согласование</h3>
+            <p>Утверждаем план, сроки и бюджет. Без скрытых платежей.</p>
+          </div>
+          <div class="card step reveal">
+            <h3>4️⃣ Настройка (1–3 недели)</h3>
+            <p>Создаем систему и подключаем ее к вашим каналам.</p>
+          </div>
+          <div class="card step reveal">
+            <h3>5️⃣ Обучение</h3>
+            <p>Показываем, как пользоваться. Простая инструкция на 1 страницу.</p>
+          </div>
+          <div class="card step reveal">
+            <h3>6️⃣ Поддержка</h3>
+            <p>Первый месяц помогаем с любыми вопросами бесплатно.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="why">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow"><span class="dot"></span> Почему мы</div>
+          <h2>Почему выбирают нас</h2>
+          <p>Три причины, которые чаще всего называют клиенты.</p>
+        </div>
+
+        <div class="grid-3 why">
+          <article class="card reveal">
+            <div class="icon"><i class="fa-solid fa-map-location-dot"></i></div>
+            <h3>Знаем Крым</h3>
+            <p>Работаем только с местным бизнесом. Понимаем специфику сезонности, турпотока и местной аудитории.</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon"><i class="fa-solid fa-ruble-sign"></i></div>
+            <h3>Доступно</h3>
+            <p>Цены ниже крупных агентств в 2–3 раза. Качество на уровне. Оплата по этапам.</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon"><i class="fa-solid fa-bolt"></i></div>
+            <h3>Быстро</h3>
+            <p>Первые результаты через 2 недели, а не месяцы. Без долгих согласований и лишних кругов.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section form-section" id="contact">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow"><span class="dot"></span> Форма заявки</div>
+          <h2>Получите бесплатный расчет для вашего бизнеса</h2>
+          <p>Ответим в течение 2 часов. Никакого спама.</p>
+        </div>
+
+        <div class="form-shell reveal">
+          <form id="leadForm" action="https://formspree.io/f/mvzbglqe" method="POST">
+            <input type="hidden" name="_subject" value="Новая заявка с лендинга - AIFEO: Автопилот для вашего бизнеса">
+            <input type="text" name="_gotcha" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="name">Ваше имя *</label>
+                <input id="name" name="name" type="text" placeholder="Ваше имя" required />
+              </div>
+
+              <div class="form-field">
+                <label for="phone">Телефон *</label>
+                <input id="phone" name="phone" type="tel" placeholder="+7 (___) ___-__-__" required inputmode="tel" />
+              </div>
+
+              <div class="form-field full">
+                <label for="business_type">Тип бизнеса *</label>
+                <select id="business_type" name="business_type" required>
+                  <option value="">Выберите из списка</option>
+                  <option value="hotel">Гостиница/хостел</option>
+                  <option value="spa">Баня/СПА</option>
+                  <option value="salon">Салон красоты</option>
+                  <option value="barbershop">Парикмахерская/барбершоп</option>
+                  <option value="cafe">Кафе/ресторан</option>
+                  <option value="shop">Магазин</option>
+                  <option value="other">Другое</option>
+                </select>
+              </div>
+
+              <div class="form-field full">
+                <label for="message">Что хотите автоматизировать?</label>
+                <textarea id="message" name="message" placeholder="Например: ответы клиентам, онлайн-запись, напоминания, рассылки"></textarea>
+                <div class="helper">Необязательно, но так расчет будет точнее.</div>
+              </div>
+            </div>
+
+            <label class="consent">
+              <input type="checkbox" name="consent" required>
+              <span><a href="consent.html">Согласие на обработку персональных данных</a></span>
+            </label>
+
+            <div class="submit-row">
+              <button type="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> ОТПРАВИТЬ ЗАЯВКУ</button>
+              <div class="form-note"><a href="consent.html">Согласие на обработку персональных данных</a></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top footer-grid">
+        <div>
+          <h3>Контакты</h3>
+          <ul class="footer-list">
+            <li>📧 <a href="mailto:aiinformatorbot@gmail.com">aiinformatorbot@gmail.com</a></li>
+          </ul>
+          <div class="footer-actions">
+            <a class="btn btn-primary" href="#contact"><i class="fa-solid fa-pen-to-square"></i> Оставить заявку</a>
+          </div>
+        </div>
+
+        <div>
+          <h3>География</h3>
+          <ul class="footer-list">
+            <li>Севастополь</li>
+            <li>Ялта</li>
+            <li>Судак</li>
+            <li>Феодосия</li>
+            <li>Евпатория</li>
+            <li>Симферополь</li>
+            <li>Алушта</li>
+          </ul>
+        </div>
+
+        <div id="legal">
+          <h3>Информация</h3>
+          <ul class="footer-list">
+            <li><a href="privacy-policy.html">Политика конфиденциальности</a></li>
+            <li><a href="user-agreement.html">Пользовательское соглашение</a></li>
+          </ul>
+          <p style="margin-top:14px;color:#cbd5e1">© 2025 AIFEO: Автопилот для вашего бизнеса</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal" id="successModal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="successTitle">
+      <div class="modal-icon"><i class="fa-solid fa-circle-check"></i></div>
+      <h3 id="successTitle" style="font-size:1.5rem;margin-bottom:10px">Заявка отправлена!</h3>
+      <p>Напишем на почту в течение 2 часов.</p>
+      <button class="btn close-x" id="closeModal" type="button">Закрыть</button>
+    </div>
+  </div>
+
+  <script>
+    const burger = document.getElementById('burger');
+    const mobileNav = document.getElementById('mobileNav');
+
+    burger?.addEventListener('click', () => {
+      const isOpen = mobileNav.classList.toggle('open');
+      burger.setAttribute('aria-expanded', String(isOpen));
+      burger.innerHTML = isOpen ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+    });
+
+    mobileNav?.addEventListener('click', (e) => {
+      if (e.target.closest('a')) {
+        mobileNav.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+        burger.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      }
+    });
+
+    const smoothLinks = document.querySelectorAll('a[href^="#"]');
+    smoothLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        const target = document.querySelector(link.getAttribute('href'));
+        if (!target) return;
+        e.preventDefault();
+        const y = target.getBoundingClientRect().top + window.scrollY - 86;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    const hours = document.getElementById('hours');
+    const leads = document.getElementById('leads');
+    const check = document.getElementById('check');
+    const hoursLabel = document.getElementById('hoursLabel');
+    const leadsLabel = document.getElementById('leadsLabel');
+    const lossesEl = document.getElementById('losses');
+    const paybackEl = document.getElementById('payback');
+    const savingsEl = document.getElementById('savings');
+
+    function formatRub(value){
+      return new Intl.NumberFormat('ru-RU', { maximumFractionDigits: 0 }).format(Math.round(value)) + '₽';
+    }
+
+    function calculate(){
+      const hoursVal = Number(hours.value || 0);
+      const leadsVal = Number(leads.value || 0);
+      const checkVal = Number(check.value || 0);
+
+      hoursLabel.textContent = `Сейчас: ${hoursVal} ${hoursVal === 1 ? 'час' : 'часа'}`;
+      leadsLabel.textContent = `Сейчас: ${leadsVal} ${leadsVal === 1 ? 'заявка' : 'заявок'}`;
+
+      const leadLosses = (leadsVal * 4 * checkVal);
+      const routineLosses = (hoursVal * 30 * 500);
+      lossesEl.textContent = formatRub(leadLosses);
+
+      const basePrice = 30000;
+      const monthlyBenefit = Math.max(leadLosses * 0.125, 1);
+      const paybackMonths = Math.max(1, Math.ceil(basePrice / monthlyBenefit));
+      paybackEl.textContent = `${paybackMonths} ${paybackMonths === 1 ? 'месяц' : 'месяца'}`;
+
+      savingsEl.textContent = routineLosses > 0
+        ? `Рутина съедает ещё ${formatRub(routineLosses)}`
+        : 'Рутина уже не мешает';
+    }
+
+    [hours, leads, check].forEach(el => el.addEventListener('input', calculate));
+    calculate();
+
+    const phone = document.getElementById('phone');
+    function maskPhone(value){
+      const digits = value.replace(/\D/g, '').replace(/^8/, '7').slice(0, 11);
+      let res = '+7 ';
+      if (!digits.length) return '+7 ';
+      const d = digits[0] === '7' ? digits.slice(1) : digits;
+      const parts = [];
+      if (d.length > 0) parts.push('(' + d.slice(0, 3));
+      if (d.length >= 3) parts[0] = '(' + d.slice(0, 3) + ')';
+      if (d.length > 3) parts.push(' ' + d.slice(3, 6));
+      if (d.length > 6) parts.push('-' + d.slice(6, 8));
+      if (d.length > 8) parts.push('-' + d.slice(8, 10));
+      let out = '+7 ';
+      if (d.length > 0) out += '(' + d.slice(0, 3);
+      if (d.length >= 3) out += ')';
+      if (d.length > 3) out += ' ' + d.slice(3, 6);
+      if (d.length > 6) out += '-' + d.slice(6, 8);
+      if (d.length > 8) out += '-' + d.slice(8, 10);
+      return out;
+    }
+
+    phone.addEventListener('input', () => {
+      const cursorAtEnd = phone.selectionStart === phone.value.length;
+      phone.value = maskPhone(phone.value);
+      if (cursorAtEnd) phone.setSelectionRange(phone.value.length, phone.value.length);
+    });
+    phone.addEventListener('focus', () => {
+      if (!phone.value) phone.value = '+7 ';
+      phone.setSelectionRange(phone.value.length, phone.value.length);
+    });
+    phone.addEventListener('blur', () => {
+      if (phone.value === '+7 ') phone.value = '';
+    });
+
+    const form = document.getElementById('leadForm');
+    const successModal = document.getElementById('successModal');
+    const closeModal = document.getElementById('closeModal');
+
+    function openModal(){
+      successModal.classList.add('open');
+      successModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeSuccess(){
+      successModal.classList.remove('open');
+      successModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+    closeModal.addEventListener('click', closeSuccess);
+    successModal.addEventListener('click', (e) => {
+      if (e.target === successModal) closeSuccess();
+    });
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      if (!form.reportValidity()) return;
+
+      const data = new FormData(form);
+      const payloadPhone = phone.value.replace(/\s+/g, ' ').trim();
+
+      if (!payloadPhone || payloadPhone.length < 16) {
+        phone.focus();
+        return;
+      }
+
+      data.set('phone', payloadPhone);
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: data
+        });
+
+        if (response.ok) {
+          form.reset();
+          phone.value = '';
+          openModal();
+        } else {
+          alert('Не удалось отправить заявку. Попробуйте еще раз или напишите на почту.');
+        }
+      } catch (err) {
+        alert('Не удалось отправить заявку. Проверьте подключение к интернету.');
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && successModal.classList.contains('open')) closeSuccess();
+    });
+  </script>
+</body>
+</html>
