@@ -1299,9 +1299,7 @@
         </div>
 
         <div class="form-shell reveal">
-          <form id="leadForm" action="https://formspree.io/f/mvzbglqe" method="POST">
-            <input type="hidden" name="_subject" value="Новая заявка с лендинга - AIFEO: Автопилот для вашего бизнеса">
-            <input type="text" name="_gotcha" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <form id="leadForm" action="https://ai-konfu-u70272.vm.elestio.app/webhook/aifeo-form" method="POST">
 
             <div class="form-grid">
               <div class="form-field">
@@ -1356,7 +1354,7 @@
         <div>
           <h3>Контакты</h3>
           <ul class="footer-list">
-            <li>📧 <a href="mailto:aiinformatorbot@gmail.com">aiinformatorbot@gmail.com</a></li>
+            <li>📧 <a href="/cdn-cgi/l/email-protection#44252d2d2a222b362925302b36262b30042329252d286a272b29"><span class="__cf_email__" data-cfemail="74151d1d1a121b061915001b06161b00341319151d185a171b19">[email&#160;protected]</span></a></li>
           </ul>
           <div class="footer-actions">
             <a class="btn btn-primary" href="#contact"><i class="fa-solid fa-pen-to-square"></i> Оставить заявку</a>
@@ -1397,7 +1395,7 @@
     </div>
   </div>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     const burger = document.getElementById('burger');
     const mobileNav = document.getElementById('mobileNav');
 
@@ -1533,7 +1531,6 @@
 
       if (!form.reportValidity()) return;
 
-      const data = new FormData(form);
       const payloadPhone = phone.value.replace(/\s+/g, ' ').trim();
 
       if (!payloadPhone || payloadPhone.length < 16) {
@@ -1541,13 +1538,18 @@
         return;
       }
 
-      data.set('phone', payloadPhone);
+      const payload = {
+        name: form.name.value.trim(),
+        phone: payloadPhone,
+        business_type: form.business_type.value,
+        message: form.message.value.trim()
+      };
 
       try {
         const response = await fetch(form.action, {
           method: 'POST',
-          headers: { 'Accept': 'application/json' },
-          body: data
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(payload)
         });
 
         if (response.ok) {
@@ -1576,9 +1578,4 @@
         k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
     })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=108458827', 'ym');
 
-    ym(108458827, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/108458827" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
-</body>
-</html>
+    ym(108458827, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, 
